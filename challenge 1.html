@@ -1,0 +1,219 @@
+<html>
+<head>
+<title>SpaceX</title>
+<link rel="stylesheet" type="text/css" href="css/challenge1.css"/>
+<meta name="viewport" content="width=device-width, initial-scale: 1.0, user-scalabe=0"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+</head>
+
+<body>
+	<div id="header">
+		<div class="logo"> 
+			<img src="img/logo.png" alt="Girl in a jacket">
+			 <br>
+			<h2> DashBoard</h2>
+		</div>
+	</div> 
+	
+	<div id="container">
+		<div class="sidebar">
+			<ul id="nav">
+				<li><a class="selected" href="#"> Voertuig informatie </a></li>
+				<li><a href="#"> Voertuig omgeving </a></li>
+				<li><a href="#"> Voorraden </a></li>
+				<li><a href="#"> Tools </a></li>
+			</ul>
+		</div>
+		<div class="flex-container">
+				<div class="flex-box">
+				 <legend>Brandstof</legend>
+<canvas id="brandstof" style="height: 200px; width: 100%; padding:0px 20px 0px 10px; margin:25px 0px 0px 0px;"></canvas>
+				<script>
+				var ctx = document.getElementById("brandstof").getContext('2d');
+				var brandstof = new Chart(ctx, {
+					type: 'doughnut',
+					data: {
+						labels: ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag"],
+						datasets: [{
+							label: 'Brandstof van een week',
+							data: [20, 18, 16, 11, 2],
+							backgroundColor: [
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(153, 102, 255, 0.2)',
+								'rgba(255, 159, 64, 0.2)'
+							],
+							borderColor: [
+								'rgba(255,99,132,1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(153, 102, 255, 1)',
+								'rgba(255, 159, 64, 1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero:true
+								}
+							}]
+						}
+					}
+				});
+				</script>
+				</div> 
+			
+				<div class="flex-box">
+				 <legend>Snelheid</legend>
+				 <canvas id="snelheid" style="height: 200px; width: 100%; padding: 0px 20px 0px 10px; margin:25px 0px 0px 0px;"></canvas>
+				<script>
+				var ctx = document.getElementById("snelheid").getContext('2d');
+				var snelheid = new Chart(ctx, {
+					type: 'pie',
+					data: {
+						labels: ["120km", "130km", "140km", "150km", "160km", "170km"],
+						datasets: [{
+							label: 'Snelheid in km per uur',
+							data: [1, 2, 3, 4, 5, 6],
+							backgroundColor: [
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(153, 102, 255, 0.2)',
+								'rgba(255, 159, 64, 0.2)'
+							],
+							borderColor: [
+								'rgba(255,99,132,1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(153, 102, 255, 1)',
+								'rgba(255, 159, 64, 1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero:true
+								}
+							}]
+						}
+					}
+				});
+				</script>
+				 </div>
+			
+			
+				<div class="flex-box">
+				<legend>Acceleratie</legend>
+				<canvas id="acceleratie" style="height:200px; width: 100%; padding: 0px 20px 0px 10px; margin:25px 0px 0px 0px;"></canvas>
+				<script>
+				var ctx = document.getElementById("acceleratie").getContext('2d');
+				var acceleratie = new Chart(ctx, {
+					type: 'bar',
+					data: {
+						labels: ["1uur", "2uur", "3uur", "4uur", "5uur", "6uur"],
+						datasets: [{
+							label: 'Verandering van snelheid ',
+							data: [12, 19, 3, 5, 2, 3],
+							backgroundColor: [
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(153, 102, 255, 0.2)',
+								'rgba(255, 159, 64, 0.2)'
+							],
+							borderColor: [
+								'rgba(255,99,132,1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(153, 102, 255, 1)',
+								'rgba(255, 159, 64, 1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero:true
+								}
+							}]
+						}
+					}
+				});
+				</script>
+				</div>
+			
+			
+				<div class="flex-box">
+				<legend>G-force</legend>
+				<canvas id="force" style="height:200px; width: 100%; padding: 0px 20px 0px 10px; margin:25px 0px 0px 0px;"></canvas>
+				<script>
+				var ctx = document.getElementById("force").getContext('2d');
+				var force = new Chart(ctx, {
+					type: 'line',
+					data: {
+						labels: ["1uur", "2uur", "3uur", "4uur", "5uur", "6uur"],
+						datasets: [{
+							label: 'G-force settings',
+							data: [12, 19, 3, 5, 2, 3],
+							backgroundColor: [
+								'rgba(255, 99, 132, 0.2)',
+								'rgba(54, 162, 235, 0.2)',
+								'rgba(255, 206, 86, 0.2)',
+								'rgba(75, 192, 192, 0.2)',
+								'rgba(153, 102, 255, 0.2)',
+								'rgba(255, 159, 64, 0.2)'
+							],
+							borderColor: [
+								'rgba(255,99,132,1)',
+								'rgba(54, 162, 235, 1)',
+								'rgba(255, 206, 86, 1)',
+								'rgba(75, 192, 192, 1)',
+								'rgba(153, 102, 255, 1)',
+								'rgba(255, 159, 64, 1)'
+							],
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero:true
+								}
+							}]
+						}
+					}
+				});
+				</script>
+				</div>
+			
+			
+		</div>	
+		
+	</div>	
+		
+
+
+
+
+
+</body>
+</html>
